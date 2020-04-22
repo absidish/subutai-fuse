@@ -106,7 +106,7 @@
       "description": "syncDir",
       "type": "string",
       "default": "changeme",
-      "validation": "[a-zA-Z0-9]+"
+      "validation": "[a-zA-Z0-9/]+"
     }, 
     "minioUrl": {
       "description": "minioUrl",
