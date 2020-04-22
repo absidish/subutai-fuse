@@ -38,9 +38,8 @@
         path: "{{directory}}"
         state: directory
         mode: '0755'
-    
-    - name: create deploy template
-      shell: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs
         
-    - name: create deploy template
-      shell: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs -o url={{minioUrl}} -o use_path_request_style
+    - name: Run s3fs
+      raw: cat < /tmp/*txt
+      args: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs -o url={{minioUrl}} -o use_path_request_style
+         executable: /bin/bash
