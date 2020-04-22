@@ -102,7 +102,7 @@
       "validation": "[a-zA-Z0-9]+"
     }, 
     "directory": {
-      "description": "Path yo directory to sync with backet",
+      "description": "Path to directory which will be sync with backet",
       "type": "string",
       "default": "changeme",
       "validation": "[a-zA-Z0-9/]+"
