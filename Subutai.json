@@ -6,7 +6,7 @@
   "containers": [
     {
       "hostname": "fuse",
-      "template": "debian-stretch",
+      "template": "debian-buster",
       "peer-criteria": "gr1",
       "size": "${containerSize}",
       "peer-layout": "d2"
@@ -28,7 +28,26 @@
     "source-url": "https://github.com/absidish/subutai-fuse/archive/master.zip",
     "ansible-playbook": "main.yml",
     "extra-vars": [
-      
+       {
+        "key": "accessKey",
+        "value": "${accessKey}"
+        },
+        {
+         "key": "secretKey",
+         "value": "${secretKey}"
+        },
+        {
+         "key": "bucket",
+         "value": "${bucket}"
+        },
+        {
+         "key": "directory",
+         "value": "${directory}"
+        },
+        {
+         "key": "minioUrl",
+         "value": "${minioUrl}"
+        }
     ],
     "groups": [
       {
@@ -63,6 +82,37 @@
             "type": "enum",
             "default": "SMALL",
             "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
-        }
+        },
+    
+      "accessKey": {
+      "description": "On MinIO admin credentials or root credentials are only allowed to be changed using ENVs namely MINIO_ACCESS_KEY and MINIO_SECRET_KEY",
+      "type": "string",
+      "default": "changeme",
+      "validation": "[a-zA-Z0-9]+"
+    }, 
+    "secretKey": {
+      "description": "On MinIO admin credentials or root credentials are only allowed to be changed using ENVs namely MINIO_ACCESS_KEY and MINIO_SECRET_KEY",
+      "type": "string",
+      "default": "changeme",
+      "validation": "[a-zA-Z0-9]+"
+    },
+   "bucket": {
+      "description": "bucket",
+      "type": "string",
+      "default": "changeme",
+      "validation": "[a-zA-Z0-9]+"
+    }, 
+    "directory": {
+      "description": "syncDir",
+      "type": "string",
+      "default": "changeme",
+      "validation": "[a-zA-Z0-9]+"
+    }, 
+    "minioUrl": {
+      "description": "minioUrl",
+      "type": "string",
+      "default": "changeme",
+      "validation": "[a-zA-Z0-9]+"
+    }
   }
 }
