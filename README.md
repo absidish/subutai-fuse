@@ -1,6 +1,6 @@
-# Subutai-s3fs
+# Subutai-s3fs Blueprint 
 
-[s3fs](https://github.com/s3fs-fuse/s3fs-fuse)  is FUSE-based file system backed by Amazon S3
+**Subutai-s3fs Blueprint** allows create N containers in M peers. Containers will have a directory which is sync with your Minio bucket.
 
 ## Recruitments:
 
