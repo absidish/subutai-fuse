@@ -1,4 +1,4 @@
-# subutai-s3fs
+# Subutai-s3fs
 
 [s3fs](https://github.com/s3fs-fuse/s3fs-fuse)  is FUSE-based file system backed by Amazon S3
 
