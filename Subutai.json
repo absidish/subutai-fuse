@@ -62,7 +62,7 @@
     "environmentName": {
       "description": "Enter the environment name",
       "type": "string",
-      "default": "GaleraCluster",
+      "default": "MyEnv",
       "validation": "[a-zA-Z0-9]+"
     },
     "containerPerPeerCount": {
@@ -83,7 +83,6 @@
             "default": "SMALL",
             "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
         },
-    
       "accessKey": {
       "description": "On MinIO admin credentials or root credentials are only allowed to be changed using ENVs namely MINIO_ACCESS_KEY and MINIO_SECRET_KEY",
       "type": "string",
