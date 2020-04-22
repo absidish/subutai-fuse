@@ -40,6 +40,6 @@
         mode: '0755'
         
     - name: Run s3fs
-      raw: cat < /tmp/*txt
-      args: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs -o url={{minioUrl}} -o use_path_request_style
+      raw: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs -o url={{minioUrl}} -o use_path_request_style
+      args: 
          executable: /bin/bash
