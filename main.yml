@@ -1,0 +1,40 @@
+---
+
+- hosts: all
+  remote_user: root
+  tasks:
+
+    # -------------------------------------------------------------------------
+    # Freshen up the host
+    # -------------------------------------------------------------------------
+
+    - name: Disable dpkg fsync
+      raw: test -e /etc/dpkg/dpkg.cfg.d/unsafe-io || echo force-unsafe-io > /etc/dpkg/dpkg.cfg.d/unsafe-io
+
+    - name: Upgrade debian
+      apt:
+        update_cache: true
+        upgrade: true
+
+    # -------------------------------------------------------------------------
+    # Install shit that should be there and fix locales
+    # -------------------------------------------------------------------------
+
+    - name: Install setup tools
+      apt:
+        name: "{{ item }}"
+        allow_unauthenticated: yes
+      with_items:
+        - s3fs
+          
+    - name: copy credentials
+      template:
+        src: passwd-s3fs
+        dest: /root/.passwd-s3fs
+        mode: 600
+        
+    - name: create deploy template
+      shell: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs
+        
+    - name: create deploy template
+      shell: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs -o url={{minioUrl}} -o use_path_request_style
