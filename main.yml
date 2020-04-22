@@ -33,6 +33,12 @@
         dest: /root/.passwd-s3fs
         mode: 600
         
+    - name: Create a directory if it does not exist
+      file:
+        path: {{directory}}
+        state: directory
+        mode: '0755'
+    
     - name: create deploy template
       shell: s3fs {{bucket}} {{directory}} -o passwd_file=${HOME}/.passwd-s3fs
         
