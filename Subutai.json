@@ -112,7 +112,7 @@
       "description": "minioUrl",
       "type": "string",
       "default": "changeme",
-      "validation": "((http?|https|ftp|file)://)?((W|w){3}.)?[a-zA-Z0-9]+.[a-zA-Z]+"
+      "validation": "*"
     }
   }
 }
