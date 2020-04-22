@@ -66,13 +66,13 @@
       "validation": "[a-zA-Z0-9]+"
     },
     "containerPerPeerCount": {
-      "description": "Containers per peer count",
+      "description": "Number of containers which will be located in each peer",
       "type": "int",
       "default": "1",
       "validation": "[0-9]+"
     },
     "peerCount": {
-      "description": "peer count",
+      "description": "Number of peers where will be located containers",
       "type": "int",
       "default": "1",
       "validation": "[0-9]+"
@@ -97,19 +97,19 @@
       "validation": "[a-zA-Z0-9]+"
     },
    "bucket": {
-      "description": "bucket",
+      "description": "Bucket name from minio",
       "type": "string",
       "default": "changeme",
       "validation": "[a-zA-Z0-9]+"
     }, 
     "directory": {
-      "description": "syncDir",
+      "description": "Path yo directory to sync with backet",
       "type": "string",
       "default": "changeme",
       "validation": "[a-zA-Z0-9/]+"
     }, 
     "minioUrl": {
-      "description": "minioUrl",
+      "description": "Minio URL",
       "type": "string",
       "default": "changeme",
       "validation": "^(https?|http|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]"
