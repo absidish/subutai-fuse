@@ -31,7 +31,7 @@
       template:
         src: passwd-s3fs
         dest: /root/.passwd-s3fs
-        mode: 600
+        mode: 400
         
     - name: Create a directory if it does not exist
       file:
