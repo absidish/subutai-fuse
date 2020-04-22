@@ -112,7 +112,7 @@
       "description": "minioUrl",
       "type": "string",
       "default": "changeme",
-      "validation": "*"
+      "validation": "."
     }
   }
 }
