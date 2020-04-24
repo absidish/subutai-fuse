@@ -11,17 +11,16 @@
 
 ## Performance testing of similar software:
 
-**s3fs-fuse** 
+Similar softwar to test and compare are: **s3fs-fuse** , **goofys**, **riofs**
 
-**goofys**
-
-**riofs**
-
+As testing tool selected **pngquant**.
 
 **pngquant** is a command-line utility and a library for lossy compression of PNG images. It is ideal to test read and write speed for directory.
 
 ### Testing 
-  Minio cluster has 40 png images.
+Minio cluster installed in 2 EU peers, cluster has 4 containers with 1 node in each. 40 png images uploaded initially.
+
+Command to run test:
 
 ```shell
 pngquant *.png
@@ -34,6 +33,5 @@ s3fs-fuse - 80 seconds
 goofys    - 17 seconds
 riofs     - 32 seconds
 ```
-
 
 Each software had similar environment setup.
